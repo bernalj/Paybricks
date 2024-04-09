@@ -1,5 +1,5 @@
 # Paybricks
- Paywall breaker
+This extension removes the paywall on popular Spanish newspapers, allowing you to read the news without having to register.
 
 # Install
 1. Download the .zip
