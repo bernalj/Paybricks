@@ -27,3 +27,6 @@ for (var i = 0; i < censoredParagraphs.length; i++) {
   // Update the className property of the element to remove "closeContentEnd"
   censoredParagraphs[i].className = cleanedClass.trim(); // Trim to remove leading/trailing spaces
 }
+
+// Log a message indicating that the paywall has been removed
+console.log("Paywall removed for " + window.location.href);

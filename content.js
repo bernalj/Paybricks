@@ -1,3 +1,8 @@
+var messages = {
+  "EXTENSION_LOADED": "Loaded News Uncensorer...",
+  "PAYWALL_REMOVED": "Paywall removed. Enjoy the article!"
+};
+
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
   if (changeInfo.status === 'complete' && tab.url.includes('elperiodico.com')) {
     chrome.tabs.executeScript(tabId, { file: 'elperiodico/elperiodico.js' });

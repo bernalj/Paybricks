@@ -20,5 +20,5 @@ if (restOfArticle) {
   restOfArticle.className = "a_c clearfix";
 }
 
-// Log a message indicating that the paywall has been removed (assuming messages.PAYWALL_REMOVED is defined elsewhere)
-console.log(messages.PAYWALL_REMOVED);
+// Log a message indicating that the paywall has been removed
+console.log("Paywall removed for " + window.location.href);
