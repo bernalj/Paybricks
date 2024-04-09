@@ -3,7 +3,7 @@
   "name": "Paybricks",
   "version": "0.1",
   "description": "Remove paywalls in News Websites.",
-  "permissions": ["scripting"],
+  "permissions": ["scripting", "storage", "activeTab"],
   "action": {
     "default_icon": {
       "16": "icon.png",
@@ -13,18 +13,22 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "css": ["content.css"],
-      "js": ["content.js"],
+      "matches": ["*://*.elperiodico.com/*"],
+      "css": [],
+      "js": ["elperiodico/elperiodico.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["*://elpais.com/*"],
+      "css": [],
+      "js": ["elpais/elpais.js"],
       "run_at": "document_end"
     }
   ],
-  "permissions": [
-    "storage",
-    "activeTab"
-  ],
-  "host_permissions": [
-    "*://*.elperiodico.com/*",
-    "*://elpais.com/*"
+  "web_accessible_resources": [
+    {
+      "resources": ["elperiodico/*", "elpais/*"],
+      "matches": ["<all_urls>"]
+    }
   ]
 }
