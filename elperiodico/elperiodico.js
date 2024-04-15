@@ -8,13 +8,32 @@ function removeText(originalString, textToRemove) {
 }
 
 // Set innerHTML of element with id "paywall" to an empty string
-document.getElementById("paywall").innerHTML = "";
+
+var paywallContainer = document.getElementById("paywall");
+
+if (paywallContainer){
+  document.getElementById("paywall").innerHTML = "";
+}
 
 // Remove class name from element with class "ft-helper-closenews"
 var newsContainer = document.getElementsByClassName("ft-helper-closenews")[0];
 if (newsContainer) {
   newsContainer.className = "";
 }
+
+function removeReportajePaysplash() {
+  // Get the first element with the specified class name
+  var paysplashContainer = document.getElementsByClassName("tp-iframe-wrapper tp-active")[0];
+
+  // Check if paysplashContainer is not undefined or null
+  if (paysplashContainer) {
+    // If paysplashContainer exists, remove it from the DOM by setting its outerHTML to an empty string
+    paysplashContainer.outerHTML = "";
+  }
+}
+
+// Set a timeout to call the removeReportajePaysplash function after 1000 milliseconds (1 second)
+setTimeout(removeReportajePaysplash, 1000);
 
 // Remove "closeContentEnd" from class names of elements with the class "closeContentEnd"
 var censoredParagraphs = document.getElementsByClassName("closeContentEnd");
