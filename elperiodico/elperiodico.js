@@ -30,6 +30,11 @@ function removeReportajePaysplash() {
     // If paysplashContainer exists, remove it from the DOM by setting its outerHTML to an empty string
     paysplashContainer.outerHTML = "";
   }
+
+  var transparentLayout = document.getElementsByClassName("tp-modal")[0];
+  if (transparentLayout){
+    transparentLayout.outerHTML = "";
+  }
 }
 
 // Set a timeout to call the removeReportajePaysplash function after 1000 milliseconds (1 second)
