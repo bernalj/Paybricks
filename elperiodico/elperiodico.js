@@ -69,5 +69,16 @@ function removeReportajePaysplash() {
 // Set a timeout to call the removeReportajePaysplash function after 1000 milliseconds (1 second)
 setTimeout(removeReportajePaysplash, 1000);
 
+// Remove blank spaces for ads in the middle of the article
+function removeBlankSpaces(){
+  var blankSpaces = document.getElementsByClassName("_mo_recs_tpi");
+
+  for (var i = 0; i < blankSpaces.length; i++) {
+    blankSpaces[i].outerHTML = ""
+  }
+}
+
+setTimeout(removeBlankSpaces, 1000);
+
 // Log a message indicating that the paywall has been removed
 console.log("Paywall removed for " + window.location.href);
