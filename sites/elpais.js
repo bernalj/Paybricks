@@ -20,5 +20,13 @@ if (restOfArticle) {
   restOfArticle.className = "a_c clearfix";
 }
 
+// Inject the window.ENP overrider
+const script = document.createElement('script');
+script.src = chrome.runtime.getURL("sites/elpais_inject.js");
+document.documentElement.appendChild(script);
+script.onload = function() {
+  this.remove();  // Clean up the script element after it has executed
+};
+
 // Log a message indicating that the paywall has been removed
 console.log("Paywall removed for " + window.location.href);

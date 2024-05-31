@@ -1,34 +1,45 @@
 {
   "manifest_version": 3,
   "name": "Paybricks",
-  "version": "0.1",
+  "version": "0.2",
   "description": "Remove paywalls in News Websites.",
   "permissions": ["scripting", "storage", "activeTab"],
+  "icons": {
+    "16": "icon/icon_16.png",
+    "48": "icon/icon_48.png",
+    "64": "icon/icon_64.png",
+    "128": "icon/icon_128.png"
+  }, 
   "action": {
     "default_icon": {
-      "16": "icon.png",
-      "48": "icon.png",
-      "128": "icon.png"
+      "16": "icon/icon_16.png",
+      "48": "icon/icon_48.png",
+      "64": "icon/icon_64.png",
+      "128": "icon/icon_128.png"
     }
   },
   "content_scripts": [
     {
       "matches": ["*://*.elperiodico.com/*"],
       "css": [],
-      "js": ["elperiodico/elperiodico.js"],
+      "js": ["sites/elperiodico.js"],
       "run_at": "document_end"
     },
     {
       "matches": ["*://elpais.com/*"],
       "css": [],
-      "js": ["elpais/elpais.js"],
+      "js": ["sites/elpais.js"],
       "run_at": "document_end"
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["elperiodico/*", "elpais/*"],
-      "matches": ["<all_urls>"]
+      "resources": [
+        "sites/elpais_inject.js"
+      ],
+      "matches": [
+        "*://*.elpais.com/*"
+      ]
     }
   ]
 }
