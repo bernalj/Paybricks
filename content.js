@@ -8,5 +8,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     chrome.tabs.executeScript(tabId, { file: 'sites/elperiodico.js' });
   } else if (changeInfo.status === 'complete' && tab.url.includes('elpais.com')) {
     chrome.tabs.executeScript(tabId, { file: 'sites/elpais.js' });
+  } else if (changeInfo.status === 'complete' && tab.url.includes('thedailyupside.com')) {
+    chrome.tabs.executeScript(tabId, { file: 'sites/thedailyupside.js' });
   }
 });

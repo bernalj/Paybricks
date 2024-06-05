@@ -30,6 +30,12 @@
       "css": [],
       "js": ["sites/elpais.js"],
       "run_at": "document_end"
+    },
+    {
+      "matches": ["*://*.thedailyupside.com/*"],
+      "css": [],
+      "js": ["sites/thedailyupside.js"],
+      "run_at": "document_end"
     }
   ],
   "web_accessible_resources": [
