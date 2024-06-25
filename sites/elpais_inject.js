@@ -6,11 +6,29 @@
     // Function to set window.ENP to an empty object
     function setENP() {
       Object.defineProperty(window, 'ENP', {
-        value: {},
+        value: {
+          "globalContent": {
+            "website": "el-pais"
+          },
+          "translations": {
+            "sharedBar": {
+              "copyLink": "Enlace copiado"
+            }
+          }
+        },
         writable: true,  // Allow further modifications if needed
         configurable: true  // Allow further configurations if needed
       });
-      console.log('window.ENP has been set to an empty object');
+      
+      console.log('window.ENP has been replaced');
+
+      Object.defineProperty(window, "isLoggedIn", {
+        value: false,
+        writable: true,  // Allow further modifications if needed
+        configurable: true  // Allow further configurations if needed
+      });
+
+      console.log('isloggedin has been set');
     }
   
     // Execute the function to set window.ENP
