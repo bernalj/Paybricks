@@ -29,6 +29,15 @@
       });
 
       console.log('isloggedin has been set');
+
+      // Override the PMWall variable so that the paywall library cannot load      
+      Object.defineProperty(window, 'PMWall', {
+        value: {  },
+        writable: false,  // Allow further modifications if needed
+        configurable: false  // Allow further configurations if needed
+      });
+
+      console.log('PMWall has been set as blank');
     }
   
     // Execute the function to set window.ENP and other global variables
