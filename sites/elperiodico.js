@@ -80,5 +80,22 @@ function removeBlankSpaces(){
 
 setTimeout(removeBlankSpaces, 1000);
 
+// Inject script to access website's _an object for AdBlocker popup removal
+function injectAdBlockerRemovalScript() {
+  const script = document.createElement('script');
+  script.src = chrome.runtime.getURL('sites/elperiodico_inject.js');
+  script.onload = function() {
+    this.remove();
+  };
+  (document.head || document.documentElement).appendChild(script);
+}
+
+// Inject the script when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', injectAdBlockerRemovalScript);
+} else {
+  injectAdBlockerRemovalScript();
+}
+
 // Log a message indicating that the paywall has been removed
 console.log("Paywall removed for " + window.location.href);

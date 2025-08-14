@@ -46,6 +46,14 @@
       "matches": [
         "*://*.elpais.com/*"
       ]
+    },
+    {
+      "resources": [
+        "sites/elperiodico_inject.js"
+      ],
+      "matches": [
+        "*://*.elperiodico.com/*"
+      ]
     }
   ]
 }
