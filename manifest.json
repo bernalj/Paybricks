@@ -1,11 +1,17 @@
 {
   "manifest_version": 3,
   "name": "Paybricks",
-  "version": "0.2",
+  "version": "0.3",
   "description": "Remove paywalls in News Websites.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{ff87ddb3-7480-4a45-93e7-c7439c20d800}"
+    }
+  },
   "permissions": ["scripting", "storage", "activeTab"],
   "icons": {
     "16": "icon/icon_16.png",
+    "32": "icon/icon_32.png",
     "48": "icon/icon_48.png",
     "64": "icon/icon_64.png",
     "128": "icon/icon_128.png"
@@ -13,6 +19,7 @@
   "action": {
     "default_icon": {
       "16": "icon/icon_16.png",
+      "32": "icon/icon_32.png",
       "48": "icon/icon_48.png",
       "64": "icon/icon_64.png",
       "128": "icon/icon_128.png"
